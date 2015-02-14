@@ -18,7 +18,7 @@
     <link href="dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
 
   </head>
-  <body class="skin-blue">
+  <body ng-app="acmlan" class="skin-blue">
     <div class="wrapper">
       <!-- header logo: style can be found in header.less -->
       <header class="main-header">
@@ -30,6 +30,7 @@
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
           </a>
+          
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
@@ -225,42 +226,9 @@
           </div>
         </nav>
       </header>
-      <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-      
-          <ul class="sidebar-menu">
-            <li class="header">WARSOW</li>
-            <li class="active treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-files-o"></i>
-                <span>Layout Options</span>
-                <span class="label label-primary pull-right">4</span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-              </ul>
-            </li>
 
-            <li class="header">TEEWORLDS</li>
-          </ul>
 
-        </section>
-        <!-- /.sidebar -->
-      </aside>
+      <acm-sidebar></acm-sidebar>
 
       <!-- Right side column. Contains the navbar and content of the page -->
       <div class="content-wrapper">
@@ -285,7 +253,8 @@
           <div class="row">
             <!-- Left col -->
             <section class="col-lg-6 connectedSortable">
-      
+
+
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem deserunt voluptatibus mollitia expedita, quam aut aliquid possimus, impedit, iste est ipsa dolor maiores in ipsam neque earum eaque nulla velit.</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe cum nemo, illo, voluptate itaque blanditiis voluptas sapiente repudiandae! Dicta debitis iste eos dignissimos impedit porro dolor non aliquam et repudiandae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, in, a minus saepe deleniti id sunt recusandae officiis aperiam velit debitis quae provident illum aspernatur libero deserunt quo ex. Aut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur tempora rerum adipisci provident distinctio repellendus eaque ut corporis voluptatum molestias, asperiores saepe, expedita eligendi tenetur ipsa facilis, hic minus doloribus.</p>
@@ -311,12 +280,11 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <!-- Slimscroll -->
     <script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <!-- FastClick -->
     <script src='plugins/fastclick/fastclick.min.js'></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/app.js" type="text/javascript"></script>
+    <script src="dist/js/admin_lte_lib.js" type="text/javascript"></script>
+    <script src="dist/js/angular.min.js" type="text/javascript"></script>
+    <script src="dist/js/app.js"></script>
 
   </body>
-</html>
+</html>7
