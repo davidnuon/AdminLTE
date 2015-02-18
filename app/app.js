@@ -5,11 +5,11 @@ app.config(['$routeProvider',
     $routeProvider.
       when('/home', {
         templateUrl: 'app/partials/home.html',
-        controller: 'AdminHomeCtrl'
+        controller: 'AdminHomeController'
       }).
       when('/user', {
         templateUrl: 'app/partials/user.html',
-        controller: 'AdminHomeCtrl'
+        controller: 'AdminHomeController'
       }).
       otherwise({
         redirectTo: '/home'
@@ -34,10 +34,10 @@ app.service('globalCounterService', [function globalCounterService() {
   }
 }]);
 
-app.controller('AdminHomeCtrl', ['$scope','globalCounterService',function($scope, globalCounterService){
+app.controller('AdminHomeController', ['$scope','globalCounterService',function($scope, globalCounterService){
   $scope.counter = 0;
   $scope.globalCounter = globalCounterService.get();
-  
+
   $scope.increment = function counterInc() {
       globalCounterService.inc();
       $scope.globalCounter = globalCounterService.get();
