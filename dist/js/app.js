@@ -1,5 +1,39 @@
 var app = angular.module('acmlan', []);
 
+app.controller('AdminCtrl',  function($scope){
+  $scope.foo = 'This is from the controller';
+  $scope.counter = 0;
+  $scope.tyler = 'Good man';
+});
+
+
+
+
+app.directive('acmCounter', function(){
+  // Runs during compile
+  return {
+    restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
+    replace: true,
+    template: '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"> <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span> <div class="info-box-content"><span class="info-box-text">{{ name }}</span><span class="info-box-number">{{ counter }}<small></small></span> </div> </div></div>',
+    scope: {},
+    transclude: true,
+
+    controller: function($scope, $element, $attrs, $transclude) {
+        console.log($transclude);
+    },
+    link: function($scope, iElm, iAttrs, controller) {
+
+        $scope.inc = Number(iAttrs.inc) || 0;
+        $scope.counter = $scope.$parent.counter;
+        $scope.name = iAttrs.name;
+
+        $scope.$parent.$watch('counter',function(newVal, oldVal){
+            $scope.counter = $scope.counter + $scope.inc;
+        });
+    }
+  };
+});
+
 // Directive for a sidebars
 app.directive('acmSidebar', function(){
   // Recurse through a menu list and render a sidebar   
@@ -48,6 +82,17 @@ app.directive('acmSidebar', function(){
               title: "Player status"
             },
             {
+              title: $scope.foo
+            }
+          ]
+        },        {
+          title: "Minecraft",
+          kind: "header",
+          children: [
+            {
+              title: "Player status"
+            },
+            {
               title: "Change map"
             }
           ]
@@ -67,6 +112,7 @@ app.directive('acmSidebar', function(){
       ];
 
       var root = $menuRoot;
+      $scope.foo += ' Modifying the value from scope.';
       render_menu(menu, root);
     },
   };
