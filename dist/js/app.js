@@ -7,14 +7,42 @@ app.controller('AdminCtrl',  function($scope){
 });
 
 
+app.directive('contentBox' , function(){
+  // Runs during compile
+  return {
+    scope: {}, 
+    replace: true,
+    templateUrl: 'dist/tmpl/solid-box.html',
+    restrict: 'E',
+    transclude: true,
+    link: function($scope, iElm, iAttrs, controller) {
+        $scope.title = iAttrs.title;
+    }
+  };
+});
 
+app.directive('statusBlock', function(){
+  // Runs during compile
+  return {
+    scope: {}, 
+    restrict: 'E',
+    templateUrl: 'dist/tmpl/status-block.html',
+    replace: true,
+    link: function($scope, iElm, iAttrs, controller) {
+      $scope.name =  iAttrs.name;
+      $scope.number =  iAttrs.number;
+      $scope.percent =  iAttrs.percent;
+      $scope.description =  iAttrs.description;
+    }
+  };
+});
 
 app.directive('acmCounter', function(){
   // Runs during compile
   return {
     restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
     replace: true,
-    template: '<div class="col-md-3 col-sm-6 col-xs-12"><div class="info-box"> <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span> <div class="info-box-content"><span class="info-box-text">{{ name }}</span><span class="info-box-number">{{ counter }}<small></small></span> </div> </div></div>',
+    templateUrl: 'dist/tmpl/number-block.html',
     scope: {},
     transclude: true,
 
@@ -69,7 +97,7 @@ app.directive('acmSidebar', function(){
 
   return {
     restrict: 'E',
-    template: '<aside class="main-sidebar"><section class="sidebar"><ul class="sidebar-menu"></ul></section></aside>',
+    templateUrl: 'dist/tmpl/sidebar.html',
     replace: true,
     link: function($scope, iElm, iAttrs, controller) {
       var $menuRoot = jQuery(iElm).find('.sidebar-menu');

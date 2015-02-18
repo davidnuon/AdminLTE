@@ -18,12 +18,12 @@
     <link href="dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
 
   </head>
-  <body ng-app="acmlan" ng-controller="AdminCtrl" class="skin-blue">
+  <body ng-app="acmlan" ng-controller="AdminCtrl" class="skin-yellow">
     <div class="wrapper">
       <!-- header logo: style can be found in header.less -->
       <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo"><strong>acm</strong>lan</a>
+        <a href="index2.html" class="logo"><strong>tan</strong>gelo</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
@@ -58,19 +58,74 @@
           <!-- Main row -->
           <div class="row">
             <!-- Left col -->
-            <section class="col-lg-6 connectedSortable">
-           
-         
+            <section class="col-lg-4">
+                    
               <acm-counter name="Raphel" inc="1"></acm-counter>
-              <acm-counter name="Mikey" inc="10"></acm-counter>
-              <acm-counter name="Don" inc="-1"></acm-counter>
-              <acm-counter name="Leo" inc="-1"></acm-counter>
+              <acm-counter name="Forest" inc="5"></acm-counter>
+              <acm-counter name="Ed" inc="5.2"></acm-counter>
 
-              <button ng-click="counter = counter + 1">+1</button>
+              <status-block
+                  name="What is love"
+                  number="20"
+                  percent="10"
+                  description="This is a test" 
+                  ></status-block>
 
             </section><!-- /.Left col -->
 
-            <section class="col-lg-6">
+            <section class="col-lg-4">
+                  
+              <status-block
+                  name="What is love"
+                  number="20"
+                  percent="10"
+                  description="This is a test" 
+                  ></status-block>
+
+             <content-box title="Test Header">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores!</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores!</p>
+              </content-box>
+
+
+             <content-box title="Test Header">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores!</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores!</p>
+              </content-box>
+
+
+            </section><!-- /.Left col -->
+
+            <section class="col-lg-4">
+
+              <status-block
+                  name="What is love"
+                  number="20"
+                  percent="10"
+                  description="This is a test" 
+                  ></status-block>
+
+              <content-box title="Test Header">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores!</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero at quaerat quae a, ipsa qui enim eos dignissimos doloribus facilis placeat in. Repellendus omnis, id rerum eaque, officia suscipit asperiores!</p>
+              </content-box>
+
+              <status-block
+                  name="Baby don't hurt me"
+                  number="20"
+                  percent="20"
+                  description="This is a test" 
+                  ></status-block>
+
+              <status-block
+                  name="Don't hurt me no more"
+                  number="20"
+                  percent="100"
+                  description="This is a test" 
+                  ></status-block>
 
             </section>
             </div>
