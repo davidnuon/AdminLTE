@@ -1,9 +1,48 @@
-var app = angular.module('acmlan', []);
+var app = angular.module('acmlan', ['ngRoute']);
 
-app.controller('AdminCtrl', ['$scope', function($scope){
-  $scope.foo = 'This is from the controller';
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/home', {
+        templateUrl: 'app/partials/home.html',
+        controller: 'AdminHomeCtrl'
+      }).
+      when('/user', {
+        templateUrl: 'app/partials/user.html',
+        controller: 'AdminHomeCtrl'
+      }).
+      otherwise({
+        redirectTo: '/home'
+      });
+  }]);  
+
+app.service('globalCounterService', [function globalCounterService() {
+  var value = 0;
+
+  return {
+    get: function get() {
+      return value;
+    },
+
+    set: function set(n) {
+      value = n;
+    },
+
+    inc: function inc() {
+      value++;
+    }
+  }
+}]);
+
+app.controller('AdminHomeCtrl', ['$scope','globalCounterService',function($scope, globalCounterService){
   $scope.counter = 0;
-  $scope.tyler = 'Good man';
+  $scope.globalCounter = globalCounterService.get();
+  
+  $scope.increment = function counterInc() {
+      globalCounterService.inc();
+      $scope.globalCounter = globalCounterService.get();
+  };
+
 }]);
 
 

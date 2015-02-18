@@ -1,0 +1,29 @@
+<!-- Main row -->
+<div class="row">
+  <!-- Left col -->
+  <section class="col-lg-12">
+          
+    <content-box title="Isolate Counter Box">
+      <h1>{{ counter }}</h1> 
+      <button ng-click="counter = counter + 1">+1</button>
+    </content-box>
+    
+    <content-box title="Shared Counter Box">
+      <h1>{{ globalCounter }} </h1> 
+      <button ng-click="increment()">+1</button>
+    </content-box>
+    
+    <acm-counter name="Raphel" inc="1"></acm-counter>
+    <acm-counter name="Forest" inc="5"></acm-counter>
+    <acm-counter name="Ed" inc="5.2"></acm-counter>
+
+    <status-block
+        name="What is love"
+        number="20"
+        percent="10"
+        description="This is a test" 
+        ></status-block>
+
+  </section><!-- /.Left col -->
+
+  </div>
