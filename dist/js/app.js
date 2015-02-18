@@ -1,13 +1,13 @@
 var app = angular.module('acmlan', []);
 
-app.controller('AdminCtrl',  function($scope){
+app.controller('AdminCtrl', ['$scope', function($scope){
   $scope.foo = 'This is from the controller';
   $scope.counter = 0;
   $scope.tyler = 'Good man';
-});
+}]);
 
 
-app.directive('contentBox' , function(){
+app.directive('contentBox',[function(){
   // Runs during compile
   return {
     scope: {}, 
@@ -16,12 +16,13 @@ app.directive('contentBox' , function(){
     restrict: 'E',
     transclude: true,
     link: function($scope, iElm, iAttrs, controller) {
+        $.AdminLTE.boxWidget.activateOnce(iElm);
         $scope.title = iAttrs.title;
     }
   };
-});
+}]);
 
-app.directive('statusBlock', function(){
+app.directive('statusBlock', [function(){
   // Runs during compile
   return {
     scope: {}, 
@@ -35,9 +36,9 @@ app.directive('statusBlock', function(){
       $scope.description =  iAttrs.description;
     }
   };
-});
+}]);
 
-app.directive('acmCounter', function(){
+app.directive('acmCounter', [function(){
   // Runs during compile
   return {
     restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
@@ -60,10 +61,10 @@ app.directive('acmCounter', function(){
         });
     }
   };
-});
+}]);
 
 // Directive for a sidebars
-app.directive('acmSidebar', function(){
+app.directive('acmSidebar', [function(){
   // Recurse through a menu list and render a sidebar   
   function render_menu(menu, root) {
     for(var idx in menu) {
@@ -144,7 +145,7 @@ app.directive('acmSidebar', function(){
       render_menu(menu, root);
     },
   };
-});
+}]);
 
 
 /* ------------------
@@ -183,11 +184,6 @@ $(function () {
     $(o.BSTooltipSelector).tooltip();
   }
 
-  //Activate box widget
-  if (o.enableBoxWidget) {
-    $.AdminLTE.boxWidget.activate();
-  }
-  
   if(o.enableFastclick && typeof FastClick != 'undefined') {
     FastClick.attach(document.body);
   }

@@ -264,6 +264,24 @@ $.AdminLTE.boxWidget = {
       _this.remove($(this));
     });
   },
+
+  activateOnce: function (boxElement) {
+    var $box = $(boxElement);
+    var o = $.AdminLTE.options;
+    var _this = this;
+
+    $box.find(o.boxWidgetOptions.boxWidgetSelectors.remove).click(function (e) {
+      e.preventDefault();
+      _this.remove($(this));
+    });  
+
+    $box.find(o.boxWidgetOptions.boxWidgetSelectors.collapse).click(function (e) {
+      e.preventDefault();
+      _this.collapse($(this));
+    });
+
+  },
+
   collapse: function (element) {
     //Find the box parent
     var box = element.parents(".box").first();
