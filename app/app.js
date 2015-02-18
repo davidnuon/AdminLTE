@@ -12,7 +12,7 @@ app.directive('contentBox',[function(){
   return {
     scope: {}, 
     replace: true,
-    templateUrl: 'dist/tmpl/solid-box.html',
+    templateUrl: 'app/tmpl/solid-box.html',
     restrict: 'E',
     transclude: true,
     link: function($scope, iElm, iAttrs, controller) {
@@ -27,7 +27,7 @@ app.directive('statusBlock', [function(){
   return {
     scope: {}, 
     restrict: 'E',
-    templateUrl: 'dist/tmpl/status-block.html',
+    templateUrl: 'app/tmpl/status-block.html',
     replace: true,
     link: function($scope, iElm, iAttrs, controller) {
       $scope.name =  iAttrs.name;
@@ -43,13 +43,10 @@ app.directive('acmCounter', [function(){
   return {
     restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
     replace: true,
-    templateUrl: 'dist/tmpl/number-block.html',
+    templateUrl: 'app/tmpl/number-block.html',
     scope: {},
     transclude: true,
 
-    controller: function($scope, $element, $attrs, $transclude) {
-        console.log($transclude);
-    },
     link: function($scope, iElm, iAttrs, controller) {
 
         $scope.inc = Number(iAttrs.inc) || 0;
@@ -98,7 +95,7 @@ app.directive('acmSidebar', [function(){
 
   return {
     restrict: 'E',
-    templateUrl: 'dist/tmpl/sidebar.html',
+    templateUrl: 'app/tmpl/sidebar.html',
     replace: true,
     link: function($scope, iElm, iAttrs, controller) {
       var $menuRoot = jQuery(iElm).find('.sidebar-menu');
